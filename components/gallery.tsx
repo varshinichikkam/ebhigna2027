@@ -71,7 +71,7 @@ export default function Gallery() {
             Memories &amp; Gallery
           </h2>
           <p className="mt-3 text-sm sm:text-base leading-relaxed text-forest-green/90">
-            Since 2022, every edition of Strides and Ebhigna has been stitched
+            2025, every edition of Strides and Ebhigna has been stitched
             together by late-night code sprints, spontaneous laughter between
             rounds, and the spark of seeing bold ideas come alive on stage.
             Revisit the moments, friendships, and creative milestones that
