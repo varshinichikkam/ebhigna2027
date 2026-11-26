@@ -55,12 +55,12 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="w-full bg-creamy-white border-b border-champagne-gold/40"
+      className="w-full bg-creamy-white"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-12">
-          {/* Left Side Content */}
-          <div className="lg:col-span-5 flex flex-col items-start text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-x-12 lg:gap-y-6">
+          {/* Intro Text (Top on mobile without description; Top-Left on desktop with description) */}
+          <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end flex flex-col items-start text-left">
             <p className="text-sm sm:text-base font-semibold tracking-wide text-bronze">
               Strides Since 2022
             </p>
@@ -94,52 +94,16 @@ export default function HeroSection() {
               </span>
             </div>
 
-            <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-forest-green/90">
+            {/* Description shown on desktop only */}
+            <p className="hidden lg:block mt-4 max-w-xl text-base leading-relaxed text-forest-green/90">
               Join Pragati University&apos;s flagship online technical symposium hosted by
               the Department of CSE (Artificial Intelligence). Compete across coding,
               prompt engineering, debugging, and AI showcases with peers nationwide.
             </p>
-
-            {/* CTA Buttons (No actions for now) */}
-            <div className="mt-6 flex w-full sm:w-auto flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <button
-                type="button"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-royal-gold px-7 py-3 text-sm sm:text-base font-semibold text-deep-emerald-green hover:bg-champagne-gold transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-deep-emerald-green"
-              >
-                Register Now
-              </button>
-              <button
-                type="button"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-lg border border-deep-emerald-green bg-champagne-white px-7 py-3 text-sm sm:text-base font-semibold text-deep-emerald-green hover:bg-warm-ivory transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-gold"
-              >
-                Contact Us
-              </button>
-            </div>
-
-            {/* Event Date with Blinking Arrow Transition */}
-            <div className="mt-6 inline-flex items-center gap-2.5 text-sm sm:text-base font-semibold text-deep-emerald-green">
-              <span>Get ready 8-9th of January 2027</span>
-              <motion.span
-                aria-hidden="true"
-                animate={
-                  shouldReduceMotion
-                    ? undefined
-                    : { opacity: [1, 0.2, 1], x: [0, 4, 0] }
-                }
-                transition={
-                  shouldReduceMotion
-                    ? undefined
-                    : { duration: 1.4, repeat: Infinity, ease: 'easeInOut' }
-                }
-                className="inline-flex items-center text-bronze"
-              >
-                <ArrowRight className="h-5 w-5" />
-              </motion.span>
-            </div>
           </div>
 
-          {/* Right Side Animated Showcase */}
-          <div className="lg:col-span-7 w-full">
+          {/* Animated Showcase (Above CTA buttons on mobile; Right Side spanning rows on desktop) */}
+          <div className="lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:row-span-2 lg:self-center w-full">
             <div
               className="relative w-full overflow-hidden rounded-2xl border-2 border-champagne-gold bg-deep-emerald-green shadow-xl"
               onMouseEnter={() => setIsPaused(true)}
@@ -228,6 +192,45 @@ export default function HeroSection() {
                   />
                 );
               })}
+            </div>
+          </div>
+
+          {/* CTA Buttons & Date Line (Below Images on mobile; Bottom-Left on desktop) */}
+          <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2 lg:self-start flex flex-col items-start">
+            <div className="flex w-full sm:w-auto flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <a
+                href="#events"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-royal-gold px-7 py-3 text-sm sm:text-base font-semibold text-deep-emerald-green hover:bg-champagne-gold transition-colors duration-150 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-deep-emerald-green"
+              >
+                View Events
+              </a>
+              <a
+                href="#contact-us"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-lg border border-deep-emerald-green bg-champagne-white px-7 py-3 text-sm sm:text-base font-semibold text-deep-emerald-green hover:bg-warm-ivory transition-colors duration-150 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-gold"
+              >
+                Contact Us
+              </a>
+            </div>
+
+            {/* Event Date with Blinking Arrow Transition */}
+            <div className="mt-6 inline-flex items-center gap-2.5 text-sm sm:text-base font-semibold text-deep-emerald-green">
+              <span>Get ready 8-9th of January 2027</span>
+              <motion.span
+                aria-hidden="true"
+                animate={
+                  shouldReduceMotion
+                    ? undefined
+                    : { opacity: [1, 0.2, 1], x: [0, 4, 0] }
+                }
+                transition={
+                  shouldReduceMotion
+                    ? undefined
+                    : { duration: 1.4, repeat: Infinity, ease: 'easeInOut' }
+                }
+                className="inline-flex items-center text-bronze"
+              >
+                <ArrowRight className="h-5 w-5" />
+              </motion.span>
             </div>
           </div>
         </div>
