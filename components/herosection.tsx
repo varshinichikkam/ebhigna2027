@@ -62,7 +62,7 @@ export default function HeroSection() {
           {/* Intro Text (Top on mobile without description; Top-Left on desktop with description) */}
           <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end flex flex-col items-start text-left">
             <p className="text-sm sm:text-base font-semibold tracking-wide text-bronze">
-              Strides Since 2022
+              Strides Since 2023
             </p>
 
             <h1 className="mt-2.5 text-3xl sm:text-4xl xl:text-[2.75rem] font-bold leading-tight tracking-tight text-deep-emerald-green text-balance">
